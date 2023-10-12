@@ -5,12 +5,17 @@ audio.play();
 
 // Code for displaying map
 const locations = [
-    { text: 'FFUl & FML 2023', lat: 38.751967, lng: -9.163900, images: ['./images/fful-1.jpeg', './images/fful-2.jpeg', './images/fful-3.jpeg', './images/fful-4.jpeg'] }, //farmacia
-    { text: 'ISCTE - Festival Caloiro 2023', lat: 38.748787, lng: -9.153716, images: ['./images/iscte-1.jpeg', './images/iscte-2.jpeg', './images/iscte-3.jpeg'] }, //iscte
-    // Add more locations here...
+    { text: 'FFUl & FML 2023', coo: [38.751967, -9.163900], images: Array.from({ length: 14 }, (_, i) => `./images/fful-${i + 1}.jpeg`) }, //farmacia
+    { text: 'ISCTE - Festival Caloiro 2023', coo: [38.748787, -9.153716], images: Array.from({ length: 5 }, (_, i) => `./images/iscte-${i + 1}.jpeg`) }, //iscte
+    { text: 'Estudos na FFUL', coo: [38.749631862448375, -9.157168976955093], images: Array.from({ length: 2 }, (_, i) => `./images/aulafful-${i + 1}.jpeg`) }, //sala de aula na fful
+    { text: 'Presidente da Republica', coo: [38.69803251386306, -9.200569167032683], images: Array.from({ length: 1 }, (_, i) => `./images/marcelo-${i + 1}.jpeg`) }, // Marcelao
+    { text: 'IST - Churrasco Mecanica', coo: [38.73607032293588, -9.137800724215404], images: Array.from({ length: 3 }, (_, i) => `./images/mecanica-${i + 1}.jpeg`) }, // mecanica
+    { text: 'Bingo Saldanha', coo: [38.73620643076396, -9.144572105287036], images: Array.from({ length: 1 }, (_, i) => `./images/bingo-${i + 1}.jpeg`) }
 ];
 
-const map = L.map('map').setView([38.7253, -9.1500], 7); // Centered at the United States
+console.log(Array.from({ length: 14 }, (_, i) => `./images/fful-${i + 1}.jpeg`));
+
+const map = L.map('map').setView([38.7253, -9.1500], 7); // Centered at Lisbon
 
 // Use OpenStreetMap tiles
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -18,7 +23,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 locations.forEach(location => {
-    const marker = L.marker([location.lat, location.lng]).addTo(map);
+    const marker = L.marker(location.coo).addTo(map);
 
     marker.on('click', () => {
         let popupContent = '<div class="popup-carousel">';
