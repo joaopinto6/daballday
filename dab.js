@@ -10,7 +10,8 @@ const locations = [
     { text: 'Estudos na FFUL', coo: [38.749631862448375, -9.157168976955093], images: Array.from({ length: 2 }, (_, i) => `./images/aulafful-${i + 1}.jpeg`) }, //sala de aula na fful
     { text: 'Presidente da Republica', coo: [38.69803251386306, -9.200569167032683], images: Array.from({ length: 1 }, (_, i) => `./images/marcelo-${i + 1}.jpeg`) }, // Marcelao
     { text: 'IST - Churrasco Mecanica', coo: [38.73607032293588, -9.137800724215404], images: Array.from({ length: 3 }, (_, i) => `./images/mecanica-${i + 1}.jpeg`) }, // mecanica
-    { text: 'Bingo Saldanha', coo: [38.73620643076396, -9.144572105287036], images: Array.from({ length: 1 }, (_, i) => `./images/bingo-${i + 1}.jpeg`) }
+    { text: 'Bingo Saldanha', coo: [38.73620643076396, -9.144572105287036], images: Array.from({ length: 1 }, (_, i) => `./images/bingo-${i + 1}.jpeg`) }, // bingo saldanha
+    { text: 'Bairro Alto', coo: [38.71143634631739, -9.144603811428656], images: Array.from({length: 2}, (_, i) => `./images/bairro-${i + 1}.jpg`)} // bairro alto
 ];
 
 console.log(Array.from({ length: 14 }, (_, i) => `./images/fful-${i + 1}.jpeg`));
