@@ -1,4 +1,5 @@
 // Code for playing background music in a loop
+
 const audio = new Audio('./audio/dab.mp3');
 audio.loop = true;
 audio.play();
